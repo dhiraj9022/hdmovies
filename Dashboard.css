@@ -1,0 +1,53 @@
+﻿.movie
+{
+    text-align:center;
+    padding-top:20px;
+    color:#fe9801;
+    background-image:linear-gradient(#3282b8,#0f4c75);
+    height:70px;
+    width:auto;
+}
+.latest
+{
+    text-align:center;
+    width:auto;
+    height:40px;
+    color:white;
+    background-color:#192965;
+     border-radius:5px;
+}
+.select
+{
+    text-align:center;
+    height:40px;
+    width:auto;
+    color:white;
+    background-color:#192965;
+    border-radius:5px;
+}
+.categories
+{
+    color: -internal-root-color;
+    font-family: verdana, Geneva, Tahoma, sans-serif;
+    width:auto;  
+    box-sizing:border-box;
+    display:block;
+    font-size:14px;
+    padding-bottom:10px;
+    padding-left:12px;
+    padding-right:10px;
+    padding-top:10px;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    border-bottom-color:rgb(0,0,255);
+}
+.req,.review
+{
+    text-align:center;
+    border-radius:10px;
+     background-color:#192965;
+     color:white;
+     height:40px;
+     width:auto;
+}
+

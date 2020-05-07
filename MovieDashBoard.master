@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MovieDashBoard.master.cs" Inherits="MovieDashBoard" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MoviesCountDown</title>
+    <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="Dashboard.css" rel="stylesheet" /> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="jumbotron-fluid">
+            <h2 class="movie"><em>MoviesCountDown<a href="/Admin/Login.aspx"><i class="fa fa-user" style="color:#fe9801"></i></a></em></h2>
+        </div>
+
+        <div class="jumbotron-fluid">
+            <h4 class="latest"><em>Latest Updates Movies</em></h4>
+            <div >
+                
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BorderColor="#3399FF" DataKeyNames="Id" DataSourceID="SqlDataSource1" Font-Names="Verdana"  GridLines="Horizontal" Width="100%" ForeColor="#FE9801">
+                    <Columns>
+                        <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                        <asp:BoundField DataField="name" HeaderText="Movie Name" SortExpression="name" >
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="genre" HeaderText="Genre" SortExpression="genre" >
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="duration" HeaderText="Duration" SortExpression="duration" >
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="date" HeaderText="Date" SortExpression="date" >
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="lan" HeaderText="Langauge" SortExpression="lan" >
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="starcast" HeaderText="Star-Cast" SortExpression="starcast" >
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="description" HeaderText="Description" SortExpression="description" >                     
+                        <ItemStyle ForeColor="#9933ff" />
+                        </asp:BoundField>
+                        <asp:HyperLinkField DataNavigateUrlFields="link" HeaderText="Movie Link" Text="Click Here" SortExpression="link"  >                       
+                        <ItemStyle ForeColor="Red" />
+                        </asp:HyperLinkField>
+                       
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connection %>" ProviderName="<%$ ConnectionStrings:connection.ProviderName %>" SelectCommand="SELECT * FROM [latest] ORDER BY [Id] DESC"></asp:SqlDataSource>
+                
+            </div><br />
+        </div>
+
+        <div class=" col-md-12">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+       
+<footer >
+    <div><br />
+        <h4 style="text-align:center;color:white;padding-bottom:5px;background-color:#192965"><em>Movies Sites</em></h4>
+        </div>
+    <h6 class="downsite" style="color:#192965;padding-left:10px;padding-right:10px">MoviesCountdown 2019 Hindi Movie,Latest New Bollywood Hindi Full Moviez, MoviesCountdown 2020 Hindi Film Download,
+         bolly4u Movie list,MoviesCountdown new Hindi Movie Download 2018 - 2017 - 2016, Hindi Mobile Movies, 
+        HD Hindi Full Mp4 Moviez, MoviesCountdown Bollywood Letest Movies Hindi Hollywood Dual Audio Hindi Dubbed 2018 
+        South indian Hindi Dubbed,9xmovies Downloadhub All Mvovie Download,Bolly4u Movies, Mkv Movies, PC Movies, 
+        DVDRip BRRip Bluray HDRip WEBRip WEB-DL Quality Movies List 2018, Upcoming Movie List, 
+        Free Download Khatrimaza full Hindi Movie 2015,2016,2017,2018,2019, FullHD 480p 720p 1080p Pc Movies Hindi Download,</h6>
+    <div><br />
+        <h4 style="text-align: center;background-image: linear-gradient(#3a3535,#ff7315);width: 100%; height: 29px;">©<em>MoviesCountDown</em></h4>
+    </div>
+</footer>  
+    </form>
+</body>
+</html>
